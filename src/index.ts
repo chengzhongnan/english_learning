@@ -17,8 +17,12 @@ import { registerRoute } from "./router";
 // Start a Hono app
 const app = new Hono();
 
-// 启用 CORS，允许所有来源访问
-app.use('*', cors());
+// 启用 CORS 并自定义头部配置
+app.use('*', cors({
+	origin: '*', // 允许所有来源
+	allowHeaders: ['Content-Type', 'Authorization'], // 允许的请求头部
+	allowMethods: ['GET', 'POST', 'OPTIONS'], // 允许的请求方法
+}));
 
 // Setup OpenAPI registry
 const openapi = fromHono(app, {
