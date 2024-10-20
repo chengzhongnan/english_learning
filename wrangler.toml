@@ -1,0 +1,9 @@
+name = "english_learning"
+main = "src/index.ts"
+compatibility_date = "2024-10-02"
+
+
+[[d1_databases]]
+binding = "DB" # 数据库的绑定名称，可以自定义
+database_name = "english_learning"
+database_id = "6b98c0c8-de62-482b-8c60-7f1e668944d4"
